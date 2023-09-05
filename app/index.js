@@ -57,7 +57,11 @@ export default function App() {
     */
     //displays map
     <View style={styles.container}>
-      <MapView style={styles.mapView} showsUserLocation followUserLocation />
+      <MapView
+        style={styles.mapView}
+        showsUserLocation={true}
+        followUserLocation={true}
+      />
     </View>
   );
 }
