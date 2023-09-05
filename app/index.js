@@ -1,7 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { View, Text } from "react-native";
+import { StyleSheet, View, Text } from "react-native";
+import MapView from "react-native-maps";
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "ghostwhite",
+  },
+
+  mapView: {
+    alignSelf: "stretch",
+    height: "100%",
+  },
+});
 
 export default function App() {
+  //Requesting user location
+  /*
   const [longitude, setLongitude] = useState();
   const [latitude, setLatitude] = useState();
 
@@ -29,11 +46,18 @@ export default function App() {
       navigator.geolocation.clearWatch(watcher);
     };
   });
-
+*/
   return (
+    //request user location
+    /*
     <View>
       <Text>Latitude: {latitude}</Text>
       <Text>Longitude: {longitude}</Text>
+    </View>
+    */
+    //displays map
+    <View style={styles.container}>
+      <MapView style={styles.mapView} showsUserLocation followUserLocation />
     </View>
   );
 }
