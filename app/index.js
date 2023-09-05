@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text } from "react-native";
-import MapView from "react-native-maps";
+import MapView, { Marker, Polygon } from "react-native-maps";
 
 const styles = StyleSheet.create({
   container: {
@@ -56,12 +56,50 @@ export default function App() {
     </View>
     */
     //displays map
-    <View style={styles.container}>
+    /*<View style={styles.container}>
       <MapView
         style={styles.mapView}
         showsUserLocation={true}
         followUserLocation={true}
       />
+    </View>
+    */
+    //working with Markers and maps
+    /*
+    <View style={styles.container}>
+      <MapView
+        style={styles.mapView}
+        showsUserLocation
+        followUserLocation
+        showsPointsOfInterest={false}
+      >
+        <Marker
+          title="Seneca College Newnham Campus"
+          description="Educational Institute"
+          coordinate={{ latitude: 43.79457, longitude: -79.35043 }}
+        />
+      </MapView>
+    </View>
+    */
+    //Working with Polygon on mapview
+    <View style={styles.container}>
+      <MapView
+        style={styles.mapView}
+        showsUserLocation
+        followUserLocation
+        showsPointsOfInterest={false}
+      >
+        <Polygon
+          coordinates={[
+            { latitude: 43.79701, longitude: -79.35178 },
+            { latitude: 43.79849, longitude: -79.3453 },
+            { latitude: 43.79483, longitude: -79.34612 },
+            { latitude: 43.79382, longitude: -79.35049 },
+          ]}
+          strokeWidth={3}
+          strokeColor="red"
+        />
+      </MapView>
     </View>
   );
 }
