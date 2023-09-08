@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     height: "100%",
   },
 });
-
+//hello
 export default function App() {
   //Requesting user location
   /*
